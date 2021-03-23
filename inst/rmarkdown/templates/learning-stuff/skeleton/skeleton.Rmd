@@ -1,0 +1,71 @@
+---
+title: "The Title"
+subtitle: "Data Source"
+author: "LB"
+date: "Current version: `r format(Sys.time(), '%m/%d/%Y')`"
+output:
+  html_document:
+    code_folding: hide
+    fig_caption: yes
+    default: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r Setup, warning = FALSE, message = FALSE}
+if (!require("pacman")) install.packages("pacman")
+library(pacman)
+#needed packages
+ndd_lib <-
+  c(
+    "skimr", # provides better summaries of data as opposed to default summary()
+    "rio", # streamlines data i/o
+    "here",
+    "tidyverse",
+    "janitor",
+    "ggthemes", # extra themes, scales, geoms for ggplot
+    "ggpubr", # publication ready plots
+    "showtext" # for easier fonts in r graphics
+  )
+# Use p_temp for shared code / p_load for strictly own code
+p_load(
+  char = ndd_lib,
+  install = TRUE,
+  update = FALSE,
+  character.only = FALSE
+)
+
+showtext_opts(dpi = 100)
+knitr::opts_chunk$set(
+  fig.path = "figures/",
+  fig.dim = c(9, 6),
+  fig.align = "center",
+  fig.lp = NULL,
+  dpi = 100,
+  warning = FALSE,
+  error = FALSE,
+  message = FALSE,
+  comment = "",
+  results = "markup",
+  cache = TRUE
+)
+```
+
+# The data
+
+```{r}
+skim()
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
